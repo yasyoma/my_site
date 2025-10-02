@@ -21,21 +21,61 @@
       max-width: 600px;
       margin: 0 auto 25px;
       line-height: 1.6;
+      text-align: justify;
     }
+    
+    .content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  margin-top: 20px;
+  flex-wrap: wrap; 
+}
+
+.content table {
+  order: 1;
+}
+
+.content img {
+  order: 2;
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .content img {
+    order: 1; /* картинка зверху */
+    margin-bottom: 20px;
+  }
+  .content table {
+    order: 2; /* таблиця знизу */
+  }
+}
+
     img {
       width: 280px;
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(0,0,0,0.6);
-      margin: 20px 0;
     }
-    ol {
+    table {
+      border-collapse: collapse;
+      color: #fff;
+      font-size: 1em;
       text-align: left;
-      display: inline-block;
-      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ffcc00;
+      padding: 8px 12px;
+    }
+    th {
+      background-color: #333;
     }
     a {
       display: inline-block;
-      margin-top: 30px;
+      margin-top: 20px;
       color: #ffcc00;
       text-decoration: none;
       font-weight: bold;
@@ -45,6 +85,16 @@
       color: #ffffff;
       text-shadow: 0 0 10px #ffcc00;
     }
+
+    @media (max-width: 768px) {
+      .content {
+        flex-direction: column;
+        align-items: center;
+      }
+      img {
+        margin-bottom: 20px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -52,18 +102,29 @@
 
   <p>
     Without Me — культовий сингл американського репера Емінема, що вийшов у 2002 році як провідний трек його третього студійного альбому The Eminem Show. Пісня стала миттєвим хітом і швидко піднялася у верхівки світових чартів, увійшовши до топ-10 Billboard Hot 100 та багатьох європейських рейтингів. Стиль треку поєднує характерний для Емінема швидкий, чіткий флоу з насиченим біт-продакшеном Dr. Dre, створюючи енергійний, майже карикатурний саунд.
-    За змістом композиція — це дотепне й гостре повернення артиста після короткої паузи. У тексті він з іронією висміює попкультуру, медіа й своїх критиків, заявляючи, що індустрії бракує саме його провокаційного стилю. Музичне відео підсилює цей настрій: Емінем і Dr. Dre постають у ролях супергероїв, рятуючи світ від нудьги хіп-хопу.
+    За змістом композиція — це дотепне й гостре повернення артиста після короткої паузи.
+    У тексті він з іронією висміює попкультуру, медіа й своїх критиків, заявляючи, що індустрії бракує саме його провокаційного стилю. Музичне відео підсилює цей настрій: Емінем і Dr. Dre постають у ролях супергероїв, рятуючи світ від нудьги хіп-хопу. 
     Without Me отримала премію “Ґреммі” за найкраще музичне відео та досі вважається однією з найвпливовіших робіт репера, що визначила подальший розвиток його кар’єри й закріпила статус культурного феномена початку 2000-х.
   </p>
 
-  <img src="завантаження.jpg" alt="Обкладинка синглу Without Me">
+  <div class="content">
+    <table>
+      <tr>
+        <th>Основні версії треку</th>
+      </tr>
+      <tr>
+        <td>Radio Edit</td>
+      </tr>
+      <tr>
+        <td>Album Version</td>
+      </tr>
+      <tr>
+        <td>Instrumental</td>
+      </tr>
+    </table>
 
-  <h2>Основні версії треку</h2>
-  <ol>
-    <li>Radio Edit</li>
-    <li>Album Version</li>
-    <li>Instrumental</li>
-  </ol>
+    <img src="завантаження.jpg" alt="Обкладинка синглу Without Me">
+  </div>
 
   <a href="https://open.spotify.com/track/4xkOaSrkexMciUUogZKVTS" target="_blank">
     Слухати на Spotify
